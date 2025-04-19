@@ -10,11 +10,6 @@
             font-family: 'Courier New', monospace;
             margin: 0;
             padding: 0;
-            animation: fadeIn 1.6s ease-in;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
         }
         header {
             background: #ff69b4;
@@ -26,38 +21,85 @@
         }
         .hero {
             text-align: center;
-            padding: 60px 20px;
+            padding: 40px 20px;
+        }
+        .hero img {
+            width: 300px;
+            max-width: 80vw;
+            border-radius: 12px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.2);
+            margin-bottom: 20px;
         }
         .hero h1 {
             font-size: 48px;
             color: #1c1c1c;
+            margin-bottom: 10px;
         }
         .hero p {
             font-size: 20px;
             color: #666;
+            margin-bottom: 40px;
         }
-        .cta {
-            display: inline-block;
-            margin-top: 30px;
-            padding: 12px 24px;
-            background-color: #ff69b4;
-            color: white;
-            border-radius: 6px;
-            font-weight: bold;
+        .boxes {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        .box {
+            background-color: #fff;
+            border: 2px dashed #ff69b4;
+            padding: 40px 20px;
+            border-radius: 10px;
+            width: 240px;
+            height: 140px;
+            text-align: center;
             text-decoration: none;
-            transition: background-color 0.3s;
+            color: #1c1c1c;
+            font-weight: bold;
+            font-size: 18px;
+            transition: all 0.4s ease;
+            box-shadow: 0 0 8px rgba(255,105,180,0.2);
+            position: relative;
         }
-        .cta:hover {
-            background-color: #ff1493;
+        .box::before {
+            content: "📦";
+            font-size: 28px;
+            position: absolute;
+            top: 10px;
+            left: 12px;
+        }
+        .box:hover {
+            transform: translateY(-8px) scale(1.05);
+            background-color: #ffe5f2;
+            box-shadow: 0 0 12px rgba(255,105,180,0.4);
+        }
+        footer {
+            margin-top: 60px;
+            text-align: center;
+            font-size: 14px;
+            color: #aaa;
+        }
+        audio {
+            display: none;
         }
     </style>
 </head>
 <body>
     <header>KAKA EXPRESS · 咔咔即食 | カカエクスプレス</header>
+    <audio autoplay loop>
+        <source src="bgm.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
     <div class="hero">
+        <img src="KAKA.jpg" alt="KAKA Character Image" />
         <h1>快速读取，随时扫码</h1>
-        <p>她是数据时代的速食品，也是一段匿名的数字心跳</p>
-        <a href="profile.html" class="cta">查看 KAKA 档案 ></a>
+        <p>每一次点击，都是一次“信息开盒”</p>
+        <div class="boxes">
+            <a href="profile.html" class="box">档案资料页<br>PROFILE</a>
+            <a href="feed.html" class="box">社交动态页<br>FEED</a>
+        </div>
     </div>
+    <footer>ⓒ 2025 KAKA EXPRESS 数字人格速食实验</footer>
 </body>
 </html>
